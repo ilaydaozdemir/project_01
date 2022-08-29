@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Stack from "@mui/material/Stack";
 import { Button, TextField } from "@mui/material";
-const AddUser = () => {
+const AddUser = (props) => {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+
+  const addUserHandler = (event) => {
+    event.preventDefault();
+    console.log("event tetiklendi", event);
+    console.log(name, age);
+  };
+
+  const addName = (event) => {
+    setName(event.target.value);
+  };
+
+  const addAge = (event) => {
+    setAge(event.target.value);
+  };
   return (
     <Stack alignItems="center" justifyContent="center">
-      <form>
+      <form onSubmit={addUserHandler}>
         <Stack spacing={1}>
-          <item>UserName: </item>
-          <TextField variant="standard" color="success" />
-          <item>Age: </item>
-          <TextField variant="standard" color="success" />
+          <Stack>UserName: </Stack>
+          <TextField variant="standard" color="success" onChange={addName} />
+          <Stack>Age: </Stack>
+          <TextField variant="standard" color="success" onChange={addAge} />
           <Button variant="contained" type="submit" color="success">
             Submit
           </Button>
