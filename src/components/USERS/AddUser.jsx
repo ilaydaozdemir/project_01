@@ -9,6 +9,8 @@ const AddUser = (props) => {
     event.preventDefault();
     console.log("event tetiklendi", event);
     console.log(name, age);
+    setName("");
+    setAge("");
   };
 
   const addName = (event) => {
@@ -23,9 +25,19 @@ const AddUser = (props) => {
       <form onSubmit={addUserHandler}>
         <Stack spacing={1}>
           <Stack>UserName: </Stack>
-          <TextField variant="standard" color="success" onChange={addName} />
+          <TextField
+            variant="standard"
+            color="success"
+            value={name}
+            onChange={addName}
+          />
           <Stack>Age: </Stack>
-          <TextField variant="standard" color="success" onChange={addAge} />
+          <TextField
+            variant="standard"
+            color="success"
+            value={age}
+            onChange={addAge}
+          />
           <Button variant="contained" type="submit" color="success">
             Submit
           </Button>
