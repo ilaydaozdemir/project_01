@@ -7,6 +7,14 @@ const AddUser = (props) => {
 
   const addUserHandler = (event) => {
     event.preventDefault();
+    //adding validation
+    if (name.trim().length === 0 || age.trim().length === 0) {
+      return;
+    }
+    if (+age < 1) {
+      return;
+    }
+
     console.log("event tetiklendi", event);
     console.log(name, age);
     setName("");
