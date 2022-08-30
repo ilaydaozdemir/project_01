@@ -5,8 +5,9 @@ const UsersList = (props) => {
   return (
     <Stack
       sx={{
-        backgroundColor: "#070b08",
-        border: "1px solid green",
+        backgroundColor: "white",
+        color: "black",
+        border: "1px solid black",
         borderRadius: "4px",
         width: "90%",
         margin: "2rem auto",

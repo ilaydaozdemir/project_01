@@ -13,7 +13,7 @@ const AddUser = (props) => {
     if (name.trim().length === 0 || age.trim().length === 0) {
       setError({
         title: "Invalid input",
-        message: "Please enter a valid name and age (mom-empty values)",
+        message: "Please enter a valid name and age (non-empty values)",
       });
       return;
     }
@@ -56,18 +56,18 @@ const AddUser = (props) => {
             <Stack>UserName: </Stack>
             <TextField
               variant="standard"
-              color="success"
+              color="secondary"
               value={name}
               onChange={addName}
             />
             <Stack>Age: </Stack>
             <TextField
               variant="standard"
-              color="success"
+              color="secondary"
               value={age}
               onChange={addAge}
             />
-            <Button variant="contained" type="submit" color="success">
+            <Button variant="contained" type="submit" color="secondary">
               Submit
             </Button>
           </Stack>
