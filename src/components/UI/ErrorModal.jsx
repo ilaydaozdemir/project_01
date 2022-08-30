@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 const ErrorModal = (props) => {
   return (
     <div>
-      <div className={style.backdrop} />
+      <div className={style.backdrop} onClick={props.onConfirm} />
 
       <div className={style.modal}>
         <header className={style.header}>
@@ -14,7 +14,7 @@ const ErrorModal = (props) => {
         <div className={style.content}>{props.message}</div>
         <footer className={style.actions}>
           {" "}
-          <Button variant="outlined" color="success">
+          <Button variant="outlined" color="success" onClick={props.onConfirm}>
             Okey
           </Button>
         </footer>

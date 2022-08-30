@@ -37,9 +37,19 @@ const AddUser = (props) => {
   const addAge = (event) => {
     setAge(event.target.value);
   };
+
+  const errorHandler = () => {
+    setError(null);
+  };
   return (
     <div>
-      {error && <ErrorModal title={error.title} message={error.message} />}
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
+        />
+      )}
       <Stack alignItems="center" justifyContent="center">
         <form onSubmit={addUserHandler}>
           <Stack spacing={1}>
