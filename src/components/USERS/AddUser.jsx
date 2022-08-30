@@ -5,14 +5,23 @@ import ErrorModal from "../UI/ErrorModal";
 const AddUser = (props) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
+  const [error, setError] = useState("");
 
   const addUserHandler = (event) => {
     event.preventDefault();
     //adding validation
     if (name.trim().length === 0 || age.trim().length === 0) {
+      setError({
+        title: "Invalid input",
+        message: "Please enter a valid name and age (mom-empty values)",
+      });
       return;
     }
     if (+age < 1) {
+      setError({
+        title: "Invalid age",
+        message: "Please enter a valid  age (>0)",
+      });
       return;
     }
 
@@ -30,7 +39,7 @@ const AddUser = (props) => {
   };
   return (
     <div>
-      <ErrorModal title="An error occured!" message="Something went wrong!" />
+      {error && <ErrorModal title={error.title} message={error.message} />}
       <Stack alignItems="center" justifyContent="center">
         <form onSubmit={addUserHandler}>
           <Stack spacing={1}>
