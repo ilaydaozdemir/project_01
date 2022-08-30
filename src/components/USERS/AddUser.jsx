@@ -15,8 +15,7 @@ const AddUser = (props) => {
       return;
     }
 
-    console.log("event tetiklendi", event);
-    console.log(name, age);
+    props.onAddUser(name, age);
     setName("");
     setAge("");
   };
