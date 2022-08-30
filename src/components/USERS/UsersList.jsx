@@ -5,7 +5,7 @@ const UsersList = (props) => {
   return (
     <Stack
       sx={{
-        backgroundColor: "#0a150c",
+        backgroundColor: "#070b08",
         border: "1px solid green",
         borderRadius: "4px",
         width: "90%",
@@ -15,7 +15,7 @@ const UsersList = (props) => {
     >
       <ul>
         {props.users.map((user) => (
-          <li>
+          <li key={user.id}>
             {user.name} ({user.age} years old)
           </li>
         ))}
